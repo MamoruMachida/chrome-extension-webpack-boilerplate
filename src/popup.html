@@ -5,7 +5,16 @@
   <title></title>
 </head>
 <body>
-  <h1>Hello!</h1>
-  <img src="img/icon-128.png">
+  <h1>Send Webpage to Vein</h1>
+  <h3 id="username"></h3>
+  <form id='loginForm'>
+    <input name='spaceName' placeholder='space' type="text" required>
+    <input name='email' placeholder='email' type="email" required>
+    <input name='password' placeholder='password' type="password" required>
+    <button id='loginButton'>login</button>
+  </form>
+  <input id='sendUrl' type="text">
+  <button id='sendToTimeline'>Send!!</button>
+  <button id='logoutButton'>logout</button>
 </body>
 </html>
