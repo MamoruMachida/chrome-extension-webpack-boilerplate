@@ -62,8 +62,9 @@ async function getCurrentTabUrl() {
 }
 
 async function sendToTL(url) {
-    const res = await fetch(
-            new Request('https://api.vein.space/api/urls/',
+    try {
+        const res = await fetch(
+            new Request('https://api.vein.space/api/urls/'),
             {
                 body: JSON.stringify(
                     {
@@ -79,8 +80,11 @@ async function sendToTL(url) {
                 }
             }
         )
-    )
-    return true
+        return true
+    } catch (e) {
+        alert(e.message)
+        return false
+    }
 }
 
 async function logout() {

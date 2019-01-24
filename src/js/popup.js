@@ -7,6 +7,7 @@ const sendUrl = document.querySelector('#sendUrl')
 const sendBtn = document.querySelector('#sendToTimeline')
 const logoutBtn = document.querySelector('#logoutButton')
 const username = document.querySelector('#username')
+const sendedMessage = document.querySelector('#sendedMessage')
 window.onload = init
 async function init() {
     const bg = await new Promise(
@@ -44,7 +45,10 @@ loginBtn.onclick = async function () {
     }
 }
 sendBtn.onclick = async function () {
-    url = await getCurrentTabUrl()
+    sendBtn.disabled = true
+    await sendToTL(sendUrl.value)
+    sendedMessage.textContent = await sendToTL(sendUrl.value) ? 'Success!!' : 'Failed...'
+    sendBtn.disabled = false
 }
 logoutBtn.onclick = async function () {
     await logout()
