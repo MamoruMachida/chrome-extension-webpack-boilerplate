@@ -1,5 +1,5 @@
 {
-  "name": "Chrome Extension Webpack",
+  "name": "Send Webpage to Vein",
   "options_page": "options.html",
   "background": {
     "page": "background.html"
